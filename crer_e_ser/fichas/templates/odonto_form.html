@@ -1,8 +1,9 @@
+{% load staticfiles %}
+<!DOCTYPE html>
 <html>
     <head>
         <title>Crer&Ser</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static "/bootstrap/css/bootstrap.css" %}">
     </head>
     <body>
     <div class="container">
@@ -18,7 +19,7 @@
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="">Idade:</label>
-                    <input type="number" class="form-control" id="">
+                    <input type="text" class="form-control" id="">
                 </div>
             </div>
         </div>
@@ -32,7 +33,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="">Contato:</label>
-                    <input type="number" class="form-control" id="">
+                    <input type="text" class="form-control" id="">
                 </div>
             </div>
         </div>
@@ -54,23 +55,34 @@
                 <label for="">Escovação diária:</label>
                 <select id="" class="form-control">
                     <option value="">selecione</option>
+                    <option value="">uma</option>
+                    <option value="">duas</option>
+                    <option value="">três</option>
+                    <option value="">mais de três</option>
+                    <option value="">nenhuma</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="">Escova:</label>
                 <select name="" id="" class="form-control">
                     <option value="">selecione</option>
+                    <option value="">indivual</option>
+                    <option value="">coletiva</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="">Troca de escova:</label>
                 <select name="" id="" class="form-control">
                     <option value="">selecione</option>
+                    <option value="">1 mês</option>
+                    <option value="">2 meses</option>
+                    <option value="">3 meses</option>
+                    <option value="">mais de 3 meses</option>
                 </select>              
             </div>
         </div>
 
-
+        <br>
         <div class="row">
             <div class="col-md-4">
                 <label for="">Usa creme dental: </label>
@@ -79,21 +91,117 @@
                     <label><input type="radio" name="">Não</label>
                 </div>
             </div>
+            <div class="col-md-4">
+                <label for="">Usa fio dental: </label>
+                <div class="radio">
+                    <label><input type="radio" name="">Sim</label>
+                    <label><input type="radio" name="">Não</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">Quantas vezes?</label>
+                    <input type="text" class="form-control" id="">
+                </div>
+            </div>
         </div>
+
 <!-- HISTÓRIA ODONTOLÓGICA -->
         <div class="row">
             <h4 class="text-center">HISTÓRIA ODONTOLÓGICA </h4>
             <hr>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label for="">Já foi ao dentista:</label>
                 <select name="" id="" class="form-control">
                     <option value="">selecione</option>
+                    <option value="">Particular</option>
+                    <option value="">Plano</option>
+                    <option value="">Saúde Pública</option>
+                    <option value="">Não</option>
                 </select>
             </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">Última visita ao dentista:</label>
+                    <input type="text" class="form-control" id="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">Trat. Concluído?</label>
+                    <input type="text" class="form-control" id="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="">Comportamento da criança com dentista:</label>
+                <select name="" id="" class="form-control">
+                    <option value="">selecione</option>
+                    <option value="">Primeira vez</option>
+                    <option value="">Normal</option>
+                    <option value="">Fobia</option>
+                </select>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-2">
+                <label for="">Frequência alimentar:</label>
+                <select name="" id="" class="form-control">
+                    <option value="">selecione</option>
+                    <option value="">Horários normais</option>
+                    <option value="">Livre demanda</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="">Apresenta sangramento gengival?</label>
+                <div class="radio">
+                    <label><input type="radio" name="">Sim</label>
+                    <label><input type="radio" name="">Não</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="">Hábitos nocivos:</label>
+                <select name="" id="" class="form-control">
+                    <option value="">selecione</option>
+                    <option value="">Chupeta</option>
+                    <option value="">Dedo</option>
+                    <option value="">Rói unha</option>
+                    <option value="">Morde objetos</option>
+                    <option value="">Morde o lábio</option>
+                    <option value="">Bruxismo</option>
+                    <option value="">Bruxismo noturno</option>
+                    <option value="">Respirador bucal</option>
+                    <option value="">Outros</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">História de trauma:</label>
+                    <input type="text" class="form-control" id="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <label for="">Avaliação:</label>
+                <select name="" id="" class="form-control">
+                    <option value="">selecione</option>
+                    <option value="">Conduta negativa – recusa tratamento, choro forte...</option>
+                    <option value="">Conduta indefinida – pequena resistência, medo, nervossimo...</option>
+                    <option value="">Conduta sa sfatória – adaptação cautelos</option>
+                    <option value="">Conduta positiva – bom relacionamento, sem medo, interesse no tratamento...</option>
+                </select>
+            </div>
+        </div>
 
-            <button type="submit" class="btn btn-primary">Salvar</button>
-        
+<!-- ODONTOGRAMA -->
+        <div class="row">
+            <h4 class="text-center">ODONTOGRAMA</h4>
+            <hr>
+        </div>
+        <div class="text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
           </form>
     </div>
     </body>
