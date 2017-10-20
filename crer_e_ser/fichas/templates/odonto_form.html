@@ -9,7 +9,7 @@
     <body>
     <div class="container">
         <h3 class="text-center">FICHA DE AVALIAÇÃO</h3>
-        <form method="POST" action="."> {% csrf_token %}
+        <form name="odonto" method="POST" action="."> {% csrf_token %}
         <div class="row">
             <div class="col-md-10">
                 <div class="form-group">
@@ -196,9 +196,12 @@
             </div>
         </div>
         <div class="text-center">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary" onsubmit="return validateForm()">Salvar</button>
         </div>
           </form>
     </div>
+    
+    
+    
     </body>
 </html>
