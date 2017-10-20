@@ -4,22 +4,23 @@
     <head>
         <title>Crer&Ser</title>
         <link rel="stylesheet" href="{% static "/bootstrap/css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "/css/style.css" %}">
     </head>
     <body>
     <div class="container">
         <h3 class="text-center">FICHA DE AVALIAÇÃO</h3>
-        <form action="">
+        <form method="POST" action="."> {% csrf_token %}
         <div class="row">
             <div class="col-md-10">
                 <div class="form-group">
                     <label for="">Nome:</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" placeholder="Nome completo" name="nome">
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="">Idade:</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" placeholder="Idade" name="idade">
                 </div>
             </div>
         </div>
@@ -27,17 +28,17 @@
             <div class="col-md-9">
                 <div class="form-group">
                     <label for="">Responsável:</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" placeholder="Nome do responsável" name="nome_responsavel">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="">Contato:</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" placeholder="Contato do responsável" name="contato_reponsavel">
                 </div>
             </div>
         </div>
-
+    <!--
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -46,38 +47,39 @@
                 </div>
             </div>
         </div>
+    -->
 
 <!-- HÁBITOS -->
         <div class="row">
-            <h4 class="text-center">HÁBITOS</h4>
+            <h4 id="tc" class="text-center">HÁBITOS</h4>
             <hr>
             <div class="col-md-4">
                 <label for="">Escovação diária:</label>
-                <select id="" class="form-control">
+                <select id="" class="form-control" name="escovacao_diaria">
                     <option value="">selecione</option>
-                    <option value="">uma</option>
-                    <option value="">duas</option>
-                    <option value="">três</option>
-                    <option value="">mais de três</option>
-                    <option value="">nenhuma</option>
+                    <option value="uma">uma</option>
+                    <option value="duas">duas</option>
+                    <option value="tres">três</option>
+                    <option value="mais_de_tres">mais de três</option>
+                    <option value="nenhuma">nenhuma</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="">Escova:</label>
-                <select name="" id="" class="form-control">
+                <select name="escova" id="" class="form-control">
                     <option value="">selecione</option>
-                    <option value="">indivual</option>
-                    <option value="">coletiva</option>
+                    <option value="individual">indivual</option>
+                    <option value="coletiva">coletiva</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="">Troca de escova:</label>
-                <select name="" id="" class="form-control">
+                <select name="troca_de_escova" id="" class="form-control">
                     <option value="">selecione</option>
-                    <option value="">1 mês</option>
-                    <option value="">2 meses</option>
-                    <option value="">3 meses</option>
-                    <option value="">mais de 3 meses</option>
+                    <option value="um_mes">1 mês</option>
+                    <option value="dois_meses">2 meses</option>
+                    <option value="tres_meses">3 meses</option>
+                    <option value="tres_mais">mais de 3 meses</option>
                 </select>              
             </div>
         </div>
@@ -87,21 +89,21 @@
             <div class="col-md-4">
                 <label for="">Usa creme dental: </label>
                 <div class="radio">
-                    <label><input type="radio" name="">Sim</label>
-                    <label><input type="radio" name="">Não</label>
+                    <label><input type="radio" name="usa_creme">Sim</label>
+                    <label><input type="radio" name="nao_usa_creme">Não</label>
                 </div>
             </div>
             <div class="col-md-4">
                 <label for="">Usa fio dental: </label>
                 <div class="radio">
-                    <label><input type="radio" name="">Sim</label>
-                    <label><input type="radio" name="">Não</label>
+                    <label><input type="radio" name="usa_fio">Sim</label>
+                    <label><input type="radio" name="nao_usa_fio">Não</label>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="">Quantas vezes?</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" name="frequencia_escovacao">
                 </div>
             </div>
         </div>
@@ -112,33 +114,33 @@
             <hr>
             <div class="col-md-2">
                 <label for="">Já foi ao dentista:</label>
-                <select name="" id="" class="form-control">
+                <select name="foi_ao_dentista" id="" class="form-control">
                     <option value="">selecione</option>
-                    <option value="">Particular</option>
-                    <option value="">Plano</option>
-                    <option value="">Saúde Pública</option>
-                    <option value="">Não</option>
+                    <option value="particular">Particular</option>
+                    <option value="plano">Plano</option>
+                    <option value="saude_publica">Saúde Pública</option>
+                    <option value="nao">Não</option>
                 </select>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="">Última visita ao dentista:</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" name="ultima_visita">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="">Trat. Concluído?</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" name="tratamento_concluido">
                 </div>
             </div>
             <div class="col-md-4">
                 <label for="">Comportamento da criança com dentista:</label>
-                <select name="" id="" class="form-control">
+                <select name="comportamento" id="" class="form-control">
                     <option value="">selecione</option>
-                    <option value="">Primeira vez</option>
-                    <option value="">Normal</option>
-                    <option value="">Fobia</option>
+                    <option value="primeira_vez">Primeira vez</option>
+                    <option value="normal">Normal</option>
+                    <option value="fobia">Fobia</option>
                 </select>
             </div>
         </div>
@@ -146,22 +148,22 @@
         <div class="row">
             <div class="col-md-2">
                 <label for="">Frequência alimentar:</label>
-                <select name="" id="" class="form-control">
+                <select name="frequencia_alimentar" id="" class="form-control">
                     <option value="">selecione</option>
-                    <option value="">Horários normais</option>
-                    <option value="">Livre demanda</option>
+                    <option value="normais">Horários normais</option>
+                    <option value="livre">Livre demanda</option>
                 </select>
             </div>
             <div class="col-md-3">
                 <label for="">Apresenta sangramento gengival?</label>
                 <div class="radio">
-                    <label><input type="radio" name="">Sim</label>
-                    <label><input type="radio" name="">Não</label>
+                    <label><input type="radio" name="sangramento_gengival">Sim</label>
+                    <label><input type="radio" name="sangramento_gengival_">Não</label>
                 </div>
             </div>
             <div class="col-md-3">
                 <label for="">Hábitos nocivos:</label>
-                <select name="" id="" class="form-control">
+                <select name="habitos_nocivos" id="" class="form-control">
                     <option value="">selecione</option>
                     <option value="">Chupeta</option>
                     <option value="">Dedo</option>
@@ -177,27 +179,21 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="">História de trauma:</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" name="historia_trauma">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-5">
                 <label for="">Avaliação:</label>
-                <select name="" id="" class="form-control">
+                <select name="avaliacao" id="" class="form-control">
                     <option value="">selecione</option>
-                    <option value="">Conduta negativa – recusa tratamento, choro forte...</option>
-                    <option value="">Conduta indefinida – pequena resistência, medo, nervossimo...</option>
-                    <option value="">Conduta sa sfatória – adaptação cautelos</option>
-                    <option value="">Conduta positiva – bom relacionamento, sem medo, interesse no tratamento...</option>
+                    <option value="negativa">Conduta negativa – recusa tratamento, choro forte...</option>
+                    <option value="indefinida">Conduta indefinida – pequena resistência, medo, nervossimo...</option>
+                    <option value="satisfatoria">Conduta satisfatória – adaptação cautelos</option>
+                    <option value="positiva">Conduta positiva – bom relacionamento, sem medo, interesse no tratamento...</option>
                 </select>
             </div>
-        </div>
-
-<!-- ODONTOGRAMA -->
-        <div class="row">
-            <h4 class="text-center">ODONTOGRAMA</h4>
-            <hr>
         </div>
         <div class="text-center">
                 <button type="submit" class="btn btn-primary">Salvar</button>
